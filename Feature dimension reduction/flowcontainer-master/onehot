@@ -1,0 +1,17 @@
+import pandas as pd
+import csv
+
+
+#test_data_2=pd.read_csv('d:/onehot.csv')#,names=['test'],header=0)
+#test_data_2.head(999)
+
+test_data_2=['192.168.2.1','192.168.100.1','192.168.1.1',15.1,100,162]
+test_data_2_ohe=pd.get_dummies(test_data_2)#,columns=['test'])
+test_data_2_ohe.head(5)
+
+print(test_data_2_ohe.values)
+
+with open("d:/onehot_result.csv", 'w',newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(test_data_2_ohe.values)
+    print(test_data_2_ohe.values)
